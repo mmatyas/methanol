@@ -77,7 +77,9 @@ function MethanolCanvas2DTest(redraw, initDraw) {
                 start: startTime,
                 end: Date.now(),
             };
-            window.parent.postMessage(JSON.stringify(message), "*");
+            //window.parent.postMessage(JSON.stringify(message), "*");
+            console.log("    " + (message.end - message.start) + ", //" + JSON.stringify(message) + "; " + window.location.href);
+            parent.methanol_frame_message(JSON.stringify(message));
             return;
         }
         drawCtx(ctx);

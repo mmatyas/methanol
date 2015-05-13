@@ -80,6 +80,7 @@ function methanol_show_results()
 
     for (i = 0; i < methanol_n; ++i) {
         // Order the current line of results.
+        //document.write("<p>#" + i + ": " + JSON.stringify(methanol_results[i]) + "</p>");
         methanol_results[i].sort();
 
         // Compute avarage.
@@ -114,7 +115,8 @@ function methanol_show_results()
     txt += "Summary: " + s.toFixed(2) + " (" + (100 * avg_dev).toFixed(2) + "%)\n<br />"
     txt += "</pre></body></html>";
     results += "&summary=" + s.toFixed(2) + "," + avg_dev.toFixed(4);
-    document.write(txt);
+    //document.write(txt);
+    alert(txt);
 
     //actually the best way is using post instead of get
     var urlReport = getURLParam("reportToUrl");
@@ -128,14 +130,16 @@ function methanol_show_results()
     }
 }
 
-if (window.addEventListener)
+/*if (window.addEventListener)
     window.addEventListener("message", methanol_frame_message, false);
 else
     window.attachEvent("message", methanol_frame_message);
+*/
 
 function methanol_frame_message(event)
 {
-    var message = JSON.parse(event.data);
+    //var message = JSON.parse(event.data);
+    var message = JSON.parse(event);
 
     methanol_builtin_next_timeout(message.start, message.end);
 }
@@ -148,6 +152,10 @@ function methanol_next_iter()
     var frame = document.getElementById("frame");
     frame.src = "";
     frame.src = methanol_tests[methanol_i];
+
+    if (methanol_j == 0) {
+        console.log("],[\n    // #" + methanol_i + " " + frame.src);
+    }
 }
 
 function methanol_builtin_next_timeout(start, end)
