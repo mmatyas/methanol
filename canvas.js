@@ -33,8 +33,8 @@ var methanol_tests = [
     "canvas/feature_based/canvas_quad_concave.html",
     "canvas/feature_based/canvas_quad_convex.html",
     "canvas/feature_based/canvas_rect_gradient.html",
-    "canvas/feature_based/canvas_rect_pattern.html",
-    "canvas/feature_based/canvas_rect_shadow.html",
+    // "canvas/feature_based/canvas_rect_pattern.html", // libpng warning: iCCP: known incorrect sRGB profile, cHRM chunk does not match sRGB
+    // "canvas/feature_based/canvas_rect_shadow.html", // not implemented yet
 /*
  * curve
  *
@@ -63,15 +63,15 @@ var methanol_tests = [
 
     "canvas/feature_based/canvas_draw_arc_fill.html",
     "canvas/feature_based/canvas_draw_arc_stroke.html",
-    "canvas/feature_based/canvas_draw_image_alone.html",
+    // "canvas/feature_based/canvas_draw_image_alone.html", // timeout, intensive swapping?
     "canvas/feature_based/canvas_draw_line_cap.html",
     "canvas/feature_based/canvas_draw_line_join.html",
     "canvas/feature_based/canvas_draw_line_stroke_grad.html",
     "canvas/feature_based/canvas_draw_line_stroke.html",
-    "canvas/feature_based/canvas_draw_line_stroke_pattern.html",
+    // "canvas/feature_based/canvas_draw_line_stroke_pattern.html", // not implemented yet
     "canvas/feature_based/canvas_gradient_rad.html",
     "canvas/feature_based/canvas_gradient_rad_rect.html",
-    "canvas/feature_based/canvas_text.html",
+    // "canvas/feature_based/canvas_text.html", // not implemented yet
     "canvas/feature_based/canvas_transformation.html",
 ];
 
